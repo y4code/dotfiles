@@ -15,20 +15,6 @@
 
 (function () {
     'use strict';
-    const GIST_FILE_NAME = localStorage.getItem('GIST_FILE_NAME');
-    if (GIST_FILE_NAME === null || GIST_FILE_NAME === 'null' || GIST_FILE_NAME === '' || GIST_FILE_NAME === undefined || GIST_FILE_NAME === 'undefined') {
-        localStorage.setItem('GIST_FILE_NAME', prompt('请输入用来存储 Tag的 Gist 文件名', 'v2ex-user-tags.json'));
-    }
-
-    const GIST_TOKEN = localStorage.getItem('GIST_TOKEN');
-    if (GIST_TOKEN === null || GIST_TOKEN === 'null' || GIST_TOKEN === '' || GIST_TOKEN === undefined || GIST_TOKEN === 'undefined') {
-        localStorage.setItem('GIST_TOKEN', prompt('请输入用于读写 Gist 的 GitHub Token,创建时可仅勾选 创建Gist 权限, https://github.com/settings/tokens'));
-    }
-
-    const GIST_ID = localStorage.getItem('GIST_ID');
-    if (GIST_ID === null || GIST_ID === 'null' || GIST_ID === '' || GIST_ID === undefined || GIST_ID === 'undefined') {
-        localStorage.setItem('GIST_ID', prompt('请输入创建完成的 Gist ID, https://gist.github.com/'));
-    }
 
     function readAllTags() {
         return new Promise((resolve, reject) => {
@@ -144,5 +130,29 @@
         location.reload()
     }
 
-    main();
+    const GIST_FILE_NAME = localStorage.getItem('GIST_FILE_NAME');
+    const GIST_TOKEN = localStorage.getItem('GIST_TOKEN');
+    const GIST_ID = localStorage.getItem('GIST_ID');
+    const subdomain = location.hostname.split('.')[0]
+    if (
+        subdomain == 'hk'
+        || subdomain == 'cn'
+        || subdomain == 'fast'
+        || subdomain == 's'
+    ) {
+        location.hostname = 'v2ex.com'
+    } else {
+        if (GIST_FILE_NAME === null || GIST_FILE_NAME === 'null' || GIST_FILE_NAME === '' || GIST_FILE_NAME === undefined || GIST_FILE_NAME === 'undefined') {
+            localStorage.setItem('GIST_FILE_NAME', prompt('请输入用来存储 Tag的 Gist 文件名', 'v2ex-user-tags.json'));
+        }
+
+        if (GIST_TOKEN === null || GIST_TOKEN === 'null' || GIST_TOKEN === '' || GIST_TOKEN === undefined || GIST_TOKEN === 'undefined') {
+            localStorage.setItem('GIST_TOKEN', prompt('请输入用于读写 Gist 的 GitHub Token,创建时可仅勾选 创建Gist 权限, https://github.com/settings/tokens'));
+        }
+
+        if (GIST_ID === null || GIST_ID === 'null' || GIST_ID === '' || GIST_ID === undefined || GIST_ID === 'undefined') {
+            localStorage.setItem('GIST_ID', prompt('请输入创建完成的 Gist ID, https://gist.github.com/'));
+        }
+        main();
+    }
 })();
