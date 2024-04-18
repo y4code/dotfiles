@@ -139,6 +139,7 @@
         || subdomain == 'cn'
         || subdomain == 'fast'
         || subdomain == 's'
+        || subdomain == 'global'
     ) {
         location.hostname = 'v2ex.com'
     } else {
