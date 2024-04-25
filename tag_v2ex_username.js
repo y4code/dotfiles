@@ -140,6 +140,7 @@
         || subdomain == 'fast'
         || subdomain == 's'
         || subdomain == 'global'
+        || subdomain == 'jp'
     ) {
         location.hostname = 'v2ex.com'
     } else {
