@@ -1,8 +1,0 @@
-.varTopCheckError : err handle elegant way
-	ANY → var(\
-		err error\
-		$var:suggestVariableName()$ $type*:expressionType(expr))$\
-	)\
-	if $var:suggestVariableName()$, err = $expr$; err != nil {\
-		return nil, err\
-	}
