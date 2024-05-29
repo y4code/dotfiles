@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         给 V2EX 用户打标签
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.v2ex.com/*
 // @match        http*://*.v2ex.com/*
 // @match        http*://v2ex.com/*s
 // @match        https://v2ex.com/
+// @downloadURL https://raw.githubusercontent.com/y4code/dotfiles/main/.config/custom-scripts/tag_v2ex_username.js
+// @updateURL https://raw.githubusercontent.com/y4code/dotfiles/main/.config/custom-scripts/tag_v2ex_username.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=v2ex.com
 // @grant        GM_xmlhttpRequest
 // @grant        GM_download
