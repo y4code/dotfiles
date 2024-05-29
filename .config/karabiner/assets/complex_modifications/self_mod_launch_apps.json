@@ -213,7 +213,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open '/Applications/Heptabase.app'"
+                            "shell_command": "open '/Applications/ChatGPT.app'"
                         }
                     ],
                     "type": "basic"
